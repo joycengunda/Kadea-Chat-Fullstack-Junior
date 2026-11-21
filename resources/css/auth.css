@@ -1,0 +1,436 @@
+/* =========================================================
+   Kadea Chat : pages d'authentification
+   ========================================================= */
+
+/* Logo dans la colonne du formulaire */
+.kc-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.kc-brand__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--btn);
+  color: var(--btn-fg);
+}
+.kc-brand__name {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* Panneau visuel (toujours sombre, quel que soit le thème) */
+.auth__aside.kc-aside {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 32px 40px;
+  color: #eaf0ff;
+  background:
+    radial-gradient(900px 520px at 90% -10%, rgba(122, 255, 122, 0.35), transparent 60%),
+    radial-gradient(700px 520px at 0% 110%, rgba(30, 138, 43, 0.65), transparent 60%),
+    linear-gradient(160deg, #0a300c 0%, #0f440d 55%, #1b6613 100%);
+
+  /* Le bouton de thème s'adapte à ce fond sombre */
+  --card: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.16);
+  --line-2: rgba(255, 255, 255, 0.24);
+  --ink: #eaf0ff;
+  --muted: #b6c3e4;
+}
+.kc-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.kc-aside__top {
+  display: flex;
+  justify-content: flex-end;
+}
+.kc-hero {
+  max-width: 460px;
+}
+.kc-hero__title {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.kc-hero__text {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c7d3f0;
+}
+.kc-points {
+  list-style: none;
+  margin-top: 28px;
+  display: grid;
+  gap: 14px;
+}
+.kc-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #eaf0ff;
+}
+.kc-points svg {
+  flex: none;
+  padding: 7px;
+  box-sizing: content-box;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: rgba(122, 162, 255, 0.18);
+  color: #a9c0ff;
+}
+.kc-foot {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #8ea0cc;
+}
+/* Barre du haut dans la colonne du formulaire */
+.kc-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.kc-topbar__toggle {
+  display: none;
+}
+
+/* Téléphones et petites tablettes : le formulaire seul */
+@media (max-width: 900px) {
+  .auth {
+    display: block;
+    height: auto;
+    min-height: 100dvh;
+  }
+  .auth__aside.kc-aside {
+    display: none;
+  }
+  .auth__form-col {
+    width: 100%;
+    min-height: 100dvh;
+  }
+  .kc-topbar__toggle {
+    display: block;
+  }
+  /* Évite le zoom automatique de l'iPhone quand on touche un champ */
+  .auth input {
+    font-size: 16px;
+  }
+}
+/* =========================================================
+   Correctifs : texte long et menu des messages
+   ========================================================= */
+
+/* La colonne ne doit jamais s'élargir avec son contenu */
+
+.kc-sidebar,
+.kc-main {
+  min-width: 0;
+}
+.kc-list {
+  overflow-x: hidden;
+}
+.kc-row {
+  min-width: 0;
+}
+.kc-row__body {
+  min-width: 0;
+  overflow: hidden;
+}
+.kc-row__title {
+  min-width: 0;
+}
+.kc-row__preview {
+  max-width: 100%;
+}
+
+/* Menu d'actions d'un message : fenêtre en bas de l'écran */
+.kc-menu__panel {
+  display: none;
+}
+.kc-menu[open]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(5, 10, 25, 0.5);
+}
+.kc-menu[open] .kc-menu__panel {
+  display: block;
+  position: fixed;
+  z-index: 41;
+  top: auto;
+  right: auto;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(92vw, 360px);
+  padding: 8px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  box-shadow: 0 18px 50px rgba(5, 10, 25, 0.45);
+}
+.kc-menu__panel button {
+  padding: 15px 16px;
+  font-size: 16px;
+}
+@media (min-width: 901px) {
+  .kc-menu[open] .kc-menu__panel {
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    width: 260px;
+  }
+}
+
+/* Pages d'erreur */
+.kc-plain {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--paper);
+}
+.kc-code {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* Recherche dans les messages */
+.kc-results {
+  display: grid;
+  gap: 2px;
+}
+.kc-result {
+  align-items: flex-start;
+}
+.kc-snippet {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.kc-snippet strong {
+  color: var(--ink-2);
+}
+.kc-snippet mark {
+  padding: 0 3px;
+  border-radius: 4px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* Le message trouvé clignote un instant */
+.kc-msg--flash .kc-bubble {
+  animation: kcFlash 2.6s ease;
+}
+@keyframes kcFlash {
+  0%,
+  60% {
+    box-shadow: 0 0 0 3px var(--brand);
+  }
+  100% {
+    box-shadow: 0 1px 1px rgba(10, 20, 50, 0.06);
+  }
+}
+
+/* Coches devant l'aperçu dans la liste */
+.kc-row__preview .kc-ticks {
+  margin-left: 0;
+  margin-right: 4px;
+}
+
+/* Présence en ligne et saisie en cours */
+.kc-row {
+  position: relative;
+}
+.kc-row.kc-online::after {
+  content: '';
+  position: absolute;
+  left: 47px;
+  top: calc(50% + 10px);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid var(--card);
+}
+.kc-row--active.kc-online::after {
+  border-color: var(--brand-soft);
+}
+.kc-conv__sub.kc-online-text {
+  color: #16a34a;
+  font-weight: 600;
+}
+.kc-conv__sub.kc-typing {
+  color: var(--brand);
+  font-weight: 600;
+  font-style: italic;
+}
+/* Pastille « en ligne », collée à la photo */
+.kc-row.kc-online::after {
+  display: none;
+}
+.kc-avatar-wrap {
+  position: relative;
+  flex: none;
+  display: inline-flex;
+}
+.kc-dot {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid var(--card);
+}
+.kc-row.kc-online .kc-dot {
+  display: block;
+}
+.kc-row--active .kc-dot {
+  border-color: var(--brand-soft);
+}
+/* Bulle « écrit… » */
+.kc-typing-row[hidden] {
+  display: none;
+}
+.kc-bubble--typing {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 14px;
+}
+.kc-typing__who {
+  flex: 0 0 100%;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+}
+.kc-typing__who:empty {
+  display: none;
+}
+.kc-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+}
+.kc-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: kcBounce 1.2s infinite ease-in-out;
+}
+.kc-dots i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.kc-dots i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes kcBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kc-dots i {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+/* Logo : jamais sur deux lignes */
+.kc-brand {
+  flex: none;
+}
+.kc-brand__name {
+  white-space: nowrap;
+}
+.kc-sidebar__head {
+  flex-wrap: nowrap;
+}
+
+/* Éléments réservés au téléphone */
+.kc-only-mobile {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .kc-only-mobile {
+    display: inline-flex !important;
+  }
+}
+
+/* Filtre Toutes / Non lues */
+.kc-filters {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 10px;
+}
+.kc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.kc-chip--active {
+  background: var(--brand-soft);
+  border-color: transparent;
+  color: var(--brand);
+}
+.kc-chip__count {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: var(--btn-fg);
+  font-size: 11.5px;
+  line-height: 20px;
+  text-align: center;
+}
+.kc-list--unread .kc-row:not(.kc-row--has-unread) {
+  display: none;
+}

@@ -1,0 +1,52 @@
+@layouts.auth()
+  <h1 class="auth__title">Content de te revoir</h1>
+  <p class="auth__sub">Connecte-toi pour retrouver tes conversations.</p>
+  @form({
+    route: 'session.store',
+    method: 'POST',
+    class: 'auth__form',
+    'x-data': '{ submitting: false }',
+    'x-on:submit': 'submitting = true',
+  })
+    @field.root({ name: 'email' })
+      @!field.label({ text: 'Adresse e-mail' })
+      @!input.control({
+        type: 'email',
+        autocomplete: 'username',
+        placeholder: 'toi@exemple.com',
+      })
+      @!field.error()
+    @end
+    @field.root({ name: 'password' })
+      @!field.label({ text: 'Mot de passe' })
+      @!input.control({
+        type: 'password',
+        autocomplete: 'current-password',
+        placeholder: '••••••••',
+      })
+      @!field.error()
+    @end
+    @!button({
+      text: 'Se connecter',
+      type: 'submit',
+      block: true,
+      style: 'margin-top: 4px;',
+      'x-bind:disabled': 'submitting',
+      'x-text': "submitting ? 'Connexion…' : 'Se connecter'",
+    })
+  @end
+
+  <p class="auth__foot">
+    
+    Pas encore de compte ?
+
+    @link({ route: 'new_account.create', class: 'il' })
+      Créer un compte
+    @end
+  </p>
+  <p class="auth__foot">
+    @link({ route: 'forgot_password.create', class: 'il' })
+      Mot de passe oublié ?
+    @end
+  </p>
+@end

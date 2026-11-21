@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  lang="fr"
+  data-theme="{{
+    request.plainCookie('app_theme', {
+      defaultValue: 'light',
+      encoded: false,
+    })
+  }}"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kadea Chat · Messagerie instantanée</title>
+    <meta
+      name="description"
+      content="Kadea Chat : discutez en privé ou en groupe, recevez vos messages en temps réel, sur ordinateur comme sur téléphone."
+    />
+    @vite([
+      'resources/css/app.css',
+      'resources/css/auth.css',
+      'resources/css/messagerie.css',
+      'resources/css/discussion.css',
+      'resources/css/home.css',
+      'resources/js/app.js',
+    ])
+    @stack('dumper')
+  </head>
+  <body>
+    <header class="lp-nav">
+      <div class="lp-wrap lp-nav__inner">
+        <a href="/" class="kc-brand">
+          <span class="kc-brand__mark">
+            @svg('lucide:message-circle', { width: 18, height: 18 })
+          </span>
+          <span class="kc-brand__name">Kadea Chat</span>
+        </a>
+        <div class="lp-nav__links">
+          @!themeToggle()
+          @if(auth.user)
+            @link({ route: 'dashboard', class: 'lp-btn lp-btn--sm' })
+              Dashboard
+            @end
+          @else
+            @link({ route: 'session.create', class: 'lp-link lp-hide-small' })
+              Se connecter
+            @end
+            @link({
+              route: 'new_account.create',
+              class: 'lp-btn lp-btn--sm lp-hide-small',
+            })
+              S'inscrire
+            @end
+          @end
+        </div>
+      </div>
+    </header>
+    {{{ await $slots.main() }}}
+    @include('partials/flash_alerts')
+  </body>
+</html>

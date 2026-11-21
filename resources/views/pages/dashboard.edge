@@ -1,0 +1,20 @@
+@layouts.chat({
+  mode: 'list',
+  tab: 'chats',
+  conversationItems,
+  results,
+  q,
+  title: 'Conversations',
+})
+  <div class="kc-empty">
+    <div class="kc-empty__mark">
+      @svg('lucide:message-circle', { width: 30, height: 30 })
+    </div>
+    <h1>Kadea Chat</h1>
+    <p>Choisis une conversation à gauche, ou démarre une nouvelle discussion.</p>
+    <div class="kc-actions">
+      <a href="/users" class="kc-btn">Nouvelle discussion</a>
+      <a href="/groups/new" class="kc-btn kc-btn--ghost">Créer un groupe</a>
+    </div>
+  </div>
+@end

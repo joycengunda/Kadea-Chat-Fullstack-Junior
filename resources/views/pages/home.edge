@@ -1,0 +1,155 @@
+@layouts.marketing()
+  <main>
+    <section class="lp-hero">
+      <div class="lp-wrap lp-hero__grid">
+        <div>
+          <h1 class="lp-title">Discutez simplement, <em>en privé ou en groupe.</em></h1>
+          <p class="lp-lead">
+            Kadea Chat est une messagerie qui s'ouvre dans ton navigateur. Tes messages arrivent instantanément, tes conversations restent privées, et tout est là quand tu te reconnectes.
+          </p>
+          <div class="lp-actions">
+            @if(auth.user)
+              @link({ route: 'dashboard', class: 'lp-btn lp-btn--sm' })
+                Dashboard
+              @end
+            @else
+              @link({ route: 'session.create', class: 'lp-link' })
+                Se connecter
+              @end
+              @link({ route: 'new_account.create', class: 'lp-btn lp-btn--sm' })
+                S'inscrire
+              @end
+            @end
+          </div>
+          <p class="lp-note">Gratuit. Un e-mail de confirmation suffit pour commencer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section" id="fonctionnalites">
+      <div class="lp-wrap">
+        <h2 class="lp-h2">Tout ce qu'il faut pour bien discuter</h2>
+        <p class="lp-sub">Des fonctionnalités pensées pour être claires, rapides et fiables.</p>
+
+        <div class="lp-grid">
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:zap', { width: 22, height: 22 })
+            </span>
+            <h3>Temps réel</h3>
+            <p>Les messages arrivent tout de suite, sans actualiser la page.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:users', { width: 22, height: 22 })
+            </span>
+            <h3>Privé et groupes</h3>
+            <p>Discute à deux, ou crée un groupe avec un administrateur qui gère les membres.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:check-check', { width: 22, height: 22 })
+            </span>
+            <h3>Envoyé, lu</h3>
+            <p>Des coches pour savoir si ton message est parti et s'il a été lu.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:message-circle', { width: 22, height: 22 })
+            </span>
+            <h3>En ligne, « écrit… »</h3>
+            <p>Vois qui est connecté et qui est en train de t'écrire.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:bell', { width: 22, height: 22 })
+            </span>
+            <h3>Messages non lus</h3>
+            <p>Une pastille avec le nombre de nouveaux messages, pour ne rien rater.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:search', { width: 22, height: 22 })
+            </span>
+            <h3>Recherche</h3>
+            <p>Retrouve un mot dans toutes tes conversations et ouvre le bon message.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:pencil', { width: 22, height: 22 })
+            </span>
+            <h3>Modifier, supprimer</h3>
+            <p>Corrige un message ou supprime-le : les autres le voient tout de suite.</p>
+          </article>
+          <article class="lp-card">
+            <span class="lp-card__icon">
+              @svg('lucide:smartphone', { width: 22, height: 22 })
+            </span>
+            <h3>Mobile, clair et sombre</h3>
+            <p>Une interface adaptée au téléphone, avec un thème clair et un thème sombre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section" id="comment">
+      <div class="lp-wrap">
+        <h2 class="lp-h2">Comment ça marche</h2>
+        <p class="lp-sub">Trois étapes, et tu discutes.</p>
+
+        <div class="lp-steps">
+          <div class="lp-step">
+            <span class="lp-step__n">1</span>
+            <h3>Crée ton compte</h3>
+            <p>
+              Renseigne ton nom, ton e-mail et un mot de passe, puis confirme ton adresse grâce au lien reçu.
+            </p>
+          </div>
+          <div class="lp-step">
+            <span class="lp-step__n">2</span>
+            <h3>Trouve quelqu'un</h3>
+            <p>Cherche une personne par son nom pour démarrer une discussion, ou crée un groupe.</p>
+          </div>
+          <div class="lp-step">
+            <span class="lp-step__n">3</span>
+            <h3>Discute</h3>
+            <p>Envoie tes messages et retrouve tes conversations à chaque connexion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-cta">
+      <div class="lp-wrap">
+        <h2 class="lp-h2">Prêt à discuter ?</h2>
+        <p class="lp-sub">Crée ton compte en quelques secondes.</p>
+        <div class="lp-actions lp-actions--center">
+          @if(auth.user)
+            @link({ route: 'dashboard', class: 'lp-btn lp-btn--sm' })
+              Dashboard
+            @end
+          @else
+            @link({ route: 'session.create', class: 'lp-link' })
+              Se connecter
+            @end
+            @link({ route: 'new_account.create', class: 'lp-btn lp-btn--sm' })
+              S'inscrire
+            @end
+          @end
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-foot">
+    <div class="lp-wrap lp-foot__inner">
+      <a href="/" class="kc-brand">
+        <span class="kc-brand__mark">
+          @svg('lucide:message-circle', { width: 18, height: 18 })
+        </span>
+        <span class="kc-brand__name">Kadea Chat</span>
+      </a>
+      <span>Made By JOYCE NGUNDA</span>
+    </div>
+  </footer>
+@end
