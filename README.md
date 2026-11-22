@@ -4,7 +4,7 @@ Kadea Chat est une application de messagerie accessible depuis un navigateur. Le
 
 Projet réalisé pour Kadea Academy, dans le cadre du capstone de la formation développeur web, avec AdonisJS 7, Edge et PostgreSQL.
 
-**Site hébergé :** https://kadea-chat-fullstack.onrender.com
+**Site hébergé :** https://kadea-chat-fullstack-junior.onrender.com
 
 > Le site est hébergé sur Render. Si la formule gratuite est utilisée, la première page peut mettre environ une minute à s'afficher après une période d'inactivité.
 
@@ -176,7 +176,7 @@ Le fichier `.env.example` liste toutes les variables, sans valeurs secrètes.
 ## Base de données
 
 Le dictionnaire de données, le MCD et le MLD sont disponibles ici :
-https://app.diagrams.net/#G1hitR1VSEhR9bL-SC2h2WWD7Znpluehbm#%7B%22pageId%22%3A%22JlURHSjAnfij32zXeUML%22%7D
+https://app.diagrams.net/#G1yQOoSi7Opg985qYKIcZ0HaBq_a3PzbyX#%7B%22pageId%22%3A%225cSthN5Gyj1DgJwG5kZ4%22%7D
 
 Tables principales : utilisateurs, conversations, membres des conversations, messages, et jetons de confirmation et de réinitialisation.
 
@@ -275,7 +275,7 @@ L'architecture est décrite avec le modèle C4, en trois niveaux :
 2. **Conteneurs** : les grandes briques techniques (navigateur, application AdonisJS, base PostgreSQL).
 3. **Composants** : l'organisation interne de l'application (contrôleurs, modèles, validators, temps réel, emails, photos).
 
-Les schémas sont disponibles ici : https://app.diagrams.net/#G1vIbRfsvbmDbNGVsNLbmr-73fzgAs_ta8#%7B%22pageId%22%3A%22en-5o0OVk0D_OJu1yPvK%22%7D
+Les schémas sont disponibles ici : https://app.diagrams.net/#G1CFAzVvi1MwGC9VmjbMt77ZLeZ-dT1_ZU#%7B%22pageId%22%3A%22m_PmieOpNWwbQxO2dR_8%22%7D
 
 ## Déploiement
 
@@ -291,4 +291,4 @@ L'application est déployée sur Render, depuis la branche `main`.
 
 ## Auteur
 
-Barthélemy Nsiala
+Joyce NGUNDA
