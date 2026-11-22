@@ -18,13 +18,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>
-      {{
-        $props.get('title')
-          ? $props.get('title') + ' · Kadea Chat'
-          : 'Kadea Chat'
-      }}
-    </title>
+    <title>{{ $props.get('title') ? $props.get('title') + ' · My Chat' : 'My Chat' }}</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
     @vite([
       'resources/css/app.css',
       'resources/css/auth.css',
@@ -46,7 +41,7 @@
           title="Discussions"
           aria-label="Discussions"
         >
-          @svg('lucide:message-circle', { width: 22, height: 22 })
+          <img class="kc-brand__logo" src="assets/logo-mark.svg" alt="" width="36" height="36" />
         </a>
         <div class="kc-rail__spacer"></div>
         @!themeToggle()
@@ -71,12 +66,7 @@
       </nav>
       <aside class="kc-sidebar">
         <header class="kc-sidebar__head">
-          <a href="/dashboard" class="kc-brand">
-            <span class="kc-brand__mark">
-              @svg('lucide:message-circle', { width: 18, height: 18 })
-            </span>
-            <span class="kc-brand__name">My Chat</span>
-          </a>
+          <a href="/dashboard" class="kc-brand"><span class="kc-brand__name">My Chat</span></a>
           <div class="kc-sidebar__actions">
             <a
               href="/search"

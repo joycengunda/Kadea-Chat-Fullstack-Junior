@@ -432,3 +432,10 @@
 .kc-ticks--read {
   color: var(--brand);
 }
+.kc-brand__logo {
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+}

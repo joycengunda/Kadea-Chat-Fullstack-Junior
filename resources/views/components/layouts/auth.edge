@@ -12,6 +12,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Chat</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
     @vite(['resources/css/app.css', 'resources/css/auth.css', 'resources/js/app.js'])
     @stack('dumper')
   </head>
@@ -21,7 +22,13 @@
         <div class="kc-topbar">
           <a href="/" class="kc-brand">
             <span class="kc-brand__mark">
-              @svg('lucide:message-circle', { width: 18, height: 18 })
+              <img
+                class="kc-brand__logo"
+                src="assets/logo-mark.svg"
+                alt=""
+                width="36"
+                height="36"
+              />
             </span>
             <span class="kc-brand__name">My Chat</span>
           </a>
@@ -45,7 +52,7 @@
           </p>
         </div>
 
-        <p class="kc-foot">Kadea Academy</p>
+        <p class="kc-foot">My chat</p>
       </aside>
     </div>
     @include('partials/flash_alerts')

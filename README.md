@@ -1,6 +1,6 @@
-# Kadea Chat
+# My Chat
 
-Kadea Chat est une application de messagerie accessible depuis un navigateur. Les utilisateurs échangent en privé ou en groupe, reçoivent leurs messages en temps réel sans recharger la page, et retrouvent leurs conversations à chaque connexion.
+My Chat est une application de messagerie accessible depuis un navigateur. Les utilisateurs échangent en privé ou en groupe, reçoivent leurs messages en temps réel sans recharger la page, et retrouvent leurs conversations à chaque connexion.
 
 Projet réalisé pour Kadea Academy, dans le cadre du capstone de la formation développeur web, avec AdonisJS 7, Edge et PostgreSQL.
 

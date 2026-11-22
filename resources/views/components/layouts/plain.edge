@@ -11,13 +11,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      {{
-        $props.get('title')
-          ? $props.get('title') + ' · Kadea Chat'
-          : 'Kadea Chat'
-      }}
-    </title>
+    <title>{{ $props.get('title') ? $props.get('title') + ' · My Chat' : 'My Chat' }}</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
