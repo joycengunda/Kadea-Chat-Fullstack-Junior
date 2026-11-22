@@ -1,22 +1,53 @@
 @let(size = $props.get('size', 26))
 @link({
   route: 'home',
-  'aria-label': 'AdonisJS',
+  'aria-label': 'My Chat',
   style: 'display: inline-flex; color: var(--ink);',
 })
   <svg
     width="{{ size }}"
     height="{{ size }}"
-    viewBox="0 0 160 160"
+    viewBox="150 150 724 724"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="20%" x2="100%" y2="80%">
+        <stop offset="0%" stop-color="#101d5d" />
+        <stop offset="42%" stop-color="#075f73" />
+        <stop offset="100%" stop-color="#14d66d" />
+      </linearGradient>
+      <radialGradient id="glow" cx="78%" cy="18%" r="75%">
+        <stop offset="0%" stop-color="#65ffd0" stop-opacity=".35" />
+        <stop offset="65%" stop-color="#00c878" stop-opacity=".08" />
+        <stop offset="100%" stop-color="#00c878" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+
+    <rect x="150" y="150" width="724" height="724" rx="150" fill="url(#bg)" />
+
+    <rect x="150" y="150" width="724" height="724" rx="150" fill="url(#glow)" />
+
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M0 80.0001C0 144.521 15.4786 160 79.9999 160 144.521 160 160 144.521 160 80.0001 160 15.4786 144.521 0 79.9999 0 15.4786 0 0 15.4786 0 80.0001zm32.2607 16.6191l25.0918-57.0266c4.2361-9.613 12.3825-14.8268 22.6474-14.8268 10.265 0 18.4113 5.2138 22.6481 14.8268l25.091 57.0266c1.141 2.77 2.118 6.3538 2.118 9.4498 0 14.175-9.939 24.114-24.114 24.114-4.828 0-8.6629-1.232-12.5444-2.479-3.9771-1.278-8.0036-2.572-13.1987-2.572-5.1349 0-9.2597 1.306-13.3154 2.589-3.9233 1.241-7.7814 2.462-12.4279 2.462-14.1752 0-24.1141-9.939-24.1141-24.114 0-3.096.9776-6.6798 2.1182-9.4498zm47.7392-47.0871L55.2344 105.581c7.332-3.422 15.8043-5.051 24.7655-5.051 8.6358 0 17.434 1.629 24.4401 5.051L79.9999 49.5321z"
-      fill="currentColor"
+      d="M 280 620
+        L 280 300
+        Q 280 270 303 270
+        Q 318 270 335 286
+        L 512 450
+        L 689 286
+        Q 706 270 721 270
+        Q 744 270 744 300
+        L 744 760
+        L 620 690
+        Q 575 665 520 665
+        L 330 665
+        Q 280 665 280 620 Z"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="62"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 @end

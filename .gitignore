@@ -11,6 +11,7 @@ tmp/*
 .env.development.local
 
 # Frontend assets compiled code
+Public/assets/
 
 # Build tools specific
 npm-debug.log
