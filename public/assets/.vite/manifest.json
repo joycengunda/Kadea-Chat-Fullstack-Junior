@@ -1,0 +1,75 @@
+{
+  "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-cyrillic-ext-wght-normal.woff2": {
+    "file": "plus-jakarta-sans-cyrillic-ext-wght-normal-lLTsRRxN.woff2",
+    "src": "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-cyrillic-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-ext-wght-normal.woff2": {
+    "file": "plus-jakarta-sans-latin-ext-wght-normal-DmpS2jIq.woff2",
+    "src": "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-ext-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2": {
+    "file": "plus-jakarta-sans-latin-wght-normal-eXO_dkmS.woff2",
+    "src": "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2"
+  },
+  "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-vietnamese-wght-normal.woff2": {
+    "file": "plus-jakarta-sans-vietnamese-wght-normal-qRpaaN48.woff2",
+    "src": "node_modules/@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-vietnamese-wght-normal.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "app-CFAW3xZl.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "assets": [
+      "plus-jakarta-sans-cyrillic-ext-wght-normal-lLTsRRxN.woff2",
+      "plus-jakarta-sans-vietnamese-wght-normal-qRpaaN48.woff2",
+      "plus-jakarta-sans-latin-ext-wght-normal-DmpS2jIq.woff2",
+      "plus-jakarta-sans-latin-wght-normal-eXO_dkmS.woff2"
+    ]
+  },
+  "resources/css/auth.css": {
+    "file": "auth-DuNjg8Ch.css",
+    "name": "auth",
+    "names": [
+      "auth.css"
+    ],
+    "src": "resources/css/auth.css",
+    "isEntry": true
+  },
+  "resources/css/discussion.css": {
+    "file": "discussion-Dj5hsKT0.css",
+    "name": "discussion",
+    "names": [
+      "discussion.css"
+    ],
+    "src": "resources/css/discussion.css",
+    "isEntry": true
+  },
+  "resources/css/home.css": {
+    "file": "home-C1Ki0iSs.css",
+    "name": "home",
+    "names": [
+      "home.css"
+    ],
+    "src": "resources/css/home.css",
+    "isEntry": true
+  },
+  "resources/css/messagerie.css": {
+    "file": "messagerie-vbfJgowv.css",
+    "name": "messagerie",
+    "names": [
+      "messagerie.css"
+    ],
+    "src": "resources/css/messagerie.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "app-BmDiS4V_.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
